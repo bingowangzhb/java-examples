@@ -26,6 +26,6 @@ public class AnnotationDemo {
      */
     @MyAnnotation
     public void defaultMth() {
-
+        System.out.println(111);
     }
 }
