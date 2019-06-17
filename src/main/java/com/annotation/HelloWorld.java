@@ -1,5 +1,11 @@
 package com.annotation;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+
 /**
  * 说明：HelloWorld
  *
@@ -8,6 +14,13 @@ package com.annotation;
 public class HelloWorld {
 
     public static void main(String[] args) {
-        System.out.println("HelloWorld");
+        Map<String, String> map = new ConcurrentHashMap<>();
+
+        List<String> list = new ArrayList<>();
+        System.out.println(list.hashCode());
+        list.add("a");
+        System.out.println(list.hashCode());
+        list.add("c");
+        System.out.println(list.hashCode());
     }
 }
