@@ -8,7 +8,7 @@ import java.util.concurrent.TimeoutException;
  *
  * @author ShujuboDev 2018/11/13 10:28
  */
-public interface Lock {
+public interface MyLock {
     void lock() throws InterruptedException;
 
     void lock(long mills) throws InterruptedException, TimeoutException;

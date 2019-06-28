@@ -1,4 +1,4 @@
-package com.collection;
+package com.collection.map;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -9,7 +9,8 @@ import java.util.Map;
  * @author ShujuboDev
  */
 public class HashMapTest {
-
+    private final static String ABC = "abc";
+    private static String abc = "abc";
     private int num;
 
     public HashMapTest(int num) {
@@ -54,6 +55,10 @@ public class HashMapTest {
     private static void testMap() {
         HashMapTest h1 = new HashMapTest(1);
         HashMapTest h2 = new HashMapTest(1);
+
+        int a = 112;
+        int b = -128;
+        int c = 0;
 
         System.out.println(h1.hashCode());
         System.out.println(h2.hashCode());

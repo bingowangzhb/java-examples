@@ -5,13 +5,13 @@ import java.util.concurrent.TimeUnit;
 /**
  * 说明：
  *
- * @author ShujuboDev 2018/11/15 11:33
+ * @author ShujuboDev
  */
 public class VisibilityTestCase {
 
 
     static class VisibilityThread extends Thread {
-        private volatile boolean stop;
+        private boolean stop;
 
         @Override
         public void run() {

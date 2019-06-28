@@ -13,7 +13,7 @@ import static java.util.concurrent.ThreadLocalRandom.current;
 public class BooleanLockTestCase {
 
 
-    private final Lock lock = new BooleanLock();
+    private final MyLock lock = new BooleanMyLock();
 
 
     public void syncMethod() {

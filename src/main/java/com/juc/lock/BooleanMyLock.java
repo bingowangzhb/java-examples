@@ -13,7 +13,7 @@ import static java.lang.Thread.currentThread;
  *
  * @author ShujuboDev 2018/11/13 10:30
  */
-public class BooleanLock implements Lock {
+public class BooleanMyLock implements MyLock {
 
     private Thread currentThread;
     private boolean locked = false;
