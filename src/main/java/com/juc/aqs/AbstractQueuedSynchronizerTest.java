@@ -1,39 +1,35 @@
-package com.juc.lock;
+package com.juc.aqs;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * 说明：LockTest
+ * 说明：AbstractQueuedSynchronizerTest
  *
  * @author ShujuboDev
  */
-public class LockTest {
+public class AbstractQueuedSynchronizerTest {
 
     public static void main(String[] args) {
-        ShareObj obj = new ShareObj();
+        Lock lock = new ReentrantLock();
+        ShareObj obj = new ShareObj(lock);
 
-
-
-        new Thread(() -> obj.add(), "A").start();
-        new Thread(() -> obj.add(), "B").start();
-        new Thread(() -> obj.add(), "C").start();
-        new Thread(() -> obj.add(), "D").start();
-//        new Thread(() -> obj.add(), "E").start();
-
-//        for (int i = 1; i <= 20; i++) {
-//            new Thread(() -> {
-//                obj.add();
-//            }, "Thread-" + i).start();
-//        }
+        new Thread(obj::add, "Thread-A").start();
+        new Thread(obj::add, "Thread-B").start();
+        new Thread(obj::add, "Thread-C").start();
+        new Thread(obj::add, "Thread-D").start();
     }
 }
 
 class ShareObj {
-    private Lock lock = new ReentrantLock();
+    private Lock lock;
 
-    static volatile int i = 0;
+    private static volatile int i = 0;
+
+    public ShareObj(Lock lock) {
+        this.lock = lock;
+    }
 
     public void add() {
         lock.lock();
@@ -44,7 +40,7 @@ class ShareObj {
             System.out.println(Thread.currentThread().getName() + "\t 正在处理。。。");
             i++;
             try {
-                TimeUnit.SECONDS.sleep(3000);
+                TimeUnit.SECONDS.sleep(5);
             }
             catch (InterruptedException e) {
                 e.printStackTrace();

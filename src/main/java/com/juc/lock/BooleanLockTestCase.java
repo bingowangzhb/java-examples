@@ -1,6 +1,8 @@
 package com.juc.lock;
 
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 import static java.lang.Thread.currentThread;
 import static java.util.concurrent.ThreadLocalRandom.current;
@@ -14,7 +16,6 @@ public class BooleanLockTestCase {
 
 
     private final MyLock lock = new BooleanMyLock();
-
 
     public void syncMethod() {
         try {
@@ -37,18 +38,9 @@ public class BooleanLockTestCase {
     public static void main(String[] args) {
         BooleanLockTestCase bltc = new BooleanLockTestCase();
         //IntStream.range(1, 6).mapToObj(i -> new Thread(bltc::syncMethod)).forEach(Thread::start);
-
-
         for (int i = 0; i < 6; i++) {
-            new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    bltc.syncMethod();
-                }
-            }).start();
+            new Thread(bltc::syncMethod).start();
         }
-
-
     }
 
 }
