@@ -17,8 +17,8 @@ public class AbstractQueuedSynchronizerTest {
 
         new Thread(obj::add, "Thread-A").start();
         new Thread(obj::add, "Thread-B").start();
-        new Thread(obj::add, "Thread-C").start();
-        new Thread(obj::add, "Thread-D").start();
+//        new Thread(obj::add, "Thread-C").start();
+//        new Thread(obj::add, "Thread-D").start();
     }
 }
 
@@ -40,7 +40,7 @@ class ShareObj {
             System.out.println(Thread.currentThread().getName() + "\t 正在处理。。。");
             i++;
             try {
-                TimeUnit.SECONDS.sleep(5);
+                TimeUnit.SECONDS.sleep(3);
             }
             catch (InterruptedException e) {
                 e.printStackTrace();
