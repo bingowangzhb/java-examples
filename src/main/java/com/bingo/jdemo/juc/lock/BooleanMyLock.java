@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeoutException;
 
 import static java.lang.Thread.currentThread;
@@ -18,6 +19,8 @@ public class BooleanMyLock implements MyLock {
     private Thread currentThread;
     private boolean locked = false;
     private final List<Thread> blockedList = new ArrayList<>();
+
+    CountDownLatch countDownLatch;
 
     @Override
     public void lock() throws InterruptedException {
