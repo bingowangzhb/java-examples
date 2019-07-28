@@ -1,4 +1,4 @@
-package com.juc.util;
+package com.bingo.jdemo.juc.util;
 
 import java.util.Random;
 import java.util.concurrent.CountDownLatch;

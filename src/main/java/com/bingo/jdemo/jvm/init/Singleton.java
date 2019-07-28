@@ -1,4 +1,4 @@
-package com.bingo.jdemo.init;
+package com.bingo.jdemo.jvm.init;
 
 /**
  * 说明：

@@ -1,4 +1,4 @@
-package com.collection.map;
+package com.bingo.jdemo.collection.map;
 
 import java.util.HashMap;
 import java.util.Map;

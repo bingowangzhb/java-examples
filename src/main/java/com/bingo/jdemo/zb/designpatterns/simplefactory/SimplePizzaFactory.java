@@ -1,10 +1,10 @@
-package com.zb.designpatterns.simplefactory;
+package com.bingo.jdemo.zb.designpatterns.simplefactory;
 
-import com.zb.designpatterns.model.CheesePizza;
-import com.zb.designpatterns.model.ClamPizza;
-import com.zb.designpatterns.model.PepperoniPizza;
-import com.zb.designpatterns.model.Pizza;
-import com.zb.designpatterns.model.VeggiePizza;
+import com.bingo.jdemo.zb.designpatterns.model.CheesePizza;
+import com.bingo.jdemo.zb.designpatterns.model.ClamPizza;
+import com.bingo.jdemo.zb.designpatterns.model.PepperoniPizza;
+import com.bingo.jdemo.zb.designpatterns.model.Pizza;
+import com.bingo.jdemo.zb.designpatterns.model.VeggiePizza;
 
 /**
  * 说明：

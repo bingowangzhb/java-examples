@@ -1,4 +1,4 @@
-package com.zb.cocurrent.exception;
+package com.bingo.jdemo.zb.cocurrent.exception;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

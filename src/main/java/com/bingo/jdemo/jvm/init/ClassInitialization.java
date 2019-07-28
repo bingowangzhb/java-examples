@@ -1,4 +1,4 @@
-package com.bingo.jdemo.init;
+package com.bingo.jdemo.jvm.init;
 
 import java.util.Random;
 
@@ -70,7 +70,7 @@ public class ClassInitialization {
         //会触发类初始化
         System.out.println(Initable2.staticNonFinal);
         //forName方法获取Class对象
-        Class initable3 = Class.forName("com.bingo.jdemo.init.Initable3");
+        Class initable3 = Class.forName("com.bingo.jdemo.jvm.init.Initable3");
         //System.out.println("After creating Initable3 ref");
         //System.out.println(Initable3.staticNonFinal);
     }

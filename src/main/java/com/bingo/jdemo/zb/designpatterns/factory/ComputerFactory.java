@@ -1,8 +1,8 @@
-package com.zb.designpatterns.factory;
+package com.bingo.jdemo.zb.designpatterns.factory;
 
-import com.zb.designpatterns.factory.model.AbstractComputer;
-import com.zb.designpatterns.factory.model.PC;
-import com.zb.designpatterns.factory.model.Server;
+import com.bingo.jdemo.zb.designpatterns.factory.model.AbstractComputer;
+import com.bingo.jdemo.zb.designpatterns.factory.model.PC;
+import com.bingo.jdemo.zb.designpatterns.factory.model.Server;
 
 /**
  * 说明：

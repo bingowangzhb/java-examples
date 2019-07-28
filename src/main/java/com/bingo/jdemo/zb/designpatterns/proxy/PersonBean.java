@@ -1,4 +1,4 @@
-package com.zb.designpatterns.proxy;
+package com.bingo.jdemo.zb.designpatterns.proxy;
 
 /**
  * 说明：

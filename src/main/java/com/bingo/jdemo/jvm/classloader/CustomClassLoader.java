@@ -1,4 +1,4 @@
-package com.bingo.jdemo.classloader;
+package com.bingo.jdemo.jvm.classloader;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;

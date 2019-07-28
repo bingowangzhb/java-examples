@@ -1,6 +1,6 @@
-package com.zb.designpatterns.proxy;
+package com.bingo.jdemo.zb.designpatterns.proxy;
 
-import com.zb.designpatterns.proxy.handler.OwnerInvocationHandler;
+import com.bingo.jdemo.zb.designpatterns.proxy.handler.OwnerInvocationHandler;
 
 import java.lang.reflect.Proxy;
 

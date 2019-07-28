@@ -1,4 +1,4 @@
-package com.bingo.jdemo.classloader;
+package com.bingo.jdemo.jvm.classloader;
 
 import java.io.FileInputStream;
 import java.lang.reflect.Method;
@@ -12,7 +12,7 @@ public class CustomClassLoaderTest {
 
 //    public static void main(String[] args) throws Exception {
 //        CustomClassLoader loader = new CustomClassLoader();
-//        Class c = loader.loadClass("com.bingo.jdemo.classloader.Test2");
+//        Class c = loader.loadClass("com.bingo.jdemo.jvm.classloader.Test2");
 //        if (null != c) {
 //            System.out.println(c.getClassLoader());
 //            Object obj = c.newInstance();

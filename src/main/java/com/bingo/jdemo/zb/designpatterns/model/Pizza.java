@@ -1,4 +1,4 @@
-package com.zb.designpatterns.model;
+package com.bingo.jdemo.zb.designpatterns.model;
 
 import java.util.ArrayList;
 import java.util.List;

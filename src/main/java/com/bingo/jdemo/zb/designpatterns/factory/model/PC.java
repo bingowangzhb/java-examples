@@ -1,4 +1,4 @@
-package com.zb.designpatterns.factory.model;
+package com.bingo.jdemo.zb.designpatterns.factory.model;
 
 /**
  * 说明：

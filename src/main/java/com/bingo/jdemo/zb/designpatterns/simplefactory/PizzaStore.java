@@ -1,6 +1,6 @@
-package com.zb.designpatterns.simplefactory;
+package com.bingo.jdemo.zb.designpatterns.simplefactory;
 
-import com.zb.designpatterns.model.Pizza;
+import com.bingo.jdemo.zb.designpatterns.model.Pizza;
 
 /**
  * 说明：

@@ -1,4 +1,4 @@
-package com.juc.lock;
+package com.bingo.jdemo.juc.lock;
 
 import java.util.ArrayList;
 import java.util.Collections;

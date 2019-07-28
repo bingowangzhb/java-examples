@@ -1,6 +1,6 @@
-package com.zb.designpatterns.proxy.handler;
+package com.bingo.jdemo.zb.designpatterns.proxy.handler;
 
-import com.zb.designpatterns.proxy.PersonBean;
+import com.bingo.jdemo.zb.designpatterns.proxy.PersonBean;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.InvocationTargetException;

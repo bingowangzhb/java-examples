@@ -1,6 +1,4 @@
-package com.juc.queue;
-
-import sun.misc.Unsafe;
+package com.bingo.jdemo.juc.queue;
 
 import java.util.ArrayList;
 import java.util.List;

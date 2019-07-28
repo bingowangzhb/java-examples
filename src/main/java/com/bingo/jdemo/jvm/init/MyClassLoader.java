@@ -1,4 +1,4 @@
-package com.bingo.jdemo.init;
+package com.bingo.jdemo.jvm.init;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;

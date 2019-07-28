@@ -1,4 +1,4 @@
-package com.juc.exception;
+package com.bingo.jdemo.juc.exception;
 
 import java.util.concurrent.TimeUnit;
 

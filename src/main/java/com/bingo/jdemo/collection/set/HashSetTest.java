@@ -1,4 +1,4 @@
-package com.collection.set;
+package com.bingo.jdemo.collection.set;
 
 import java.util.HashSet;
 import java.util.Hashtable;

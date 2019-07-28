@@ -1,6 +1,4 @@
-package com.juc.lock;
-
-import java.util.concurrent.locks.AbstractQueuedSynchronizer;
+package com.bingo.jdemo.juc.lock;
 
 /**
  * 说明：DeadLockTest

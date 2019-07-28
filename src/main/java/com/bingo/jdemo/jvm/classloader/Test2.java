@@ -1,4 +1,4 @@
-package com.bingo.jdemo.classloader;
+package com.bingo.jdemo.jvm.classloader;
 
 /**
  * 说明：Test
