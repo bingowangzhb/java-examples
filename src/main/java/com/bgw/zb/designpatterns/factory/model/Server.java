@@ -18,14 +18,17 @@ public class Server extends AbstractComputer {
         this.hdd = hdd;
     }
 
+    @Override
     public String getCpu() {
         return this.cpu;
     }
 
+    @Override
     public String getRam() {
         return this.ram;
     }
 
+    @Override
     public String getHdd() {
         return this.hdd;
     }

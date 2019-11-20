@@ -20,6 +20,9 @@ public class HashMapTest {
     public static void main(String[] args) {
         testMap();
 
+
+
+
 //        System.out.println(roundUpToPowerOf2(6));
 //        System.out.println(roundUpToPowerOf2(12));
 //        System.out.println(roundUpToPowerOf2(18));

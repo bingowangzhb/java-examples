@@ -14,5 +14,13 @@ public class Dog extends Animal {
     @Override
     protected void someAction() {
         System.out.println("HelloWorld");
+
+        Bk bk = new Bk() {
+            
+        };
     }
+}
+
+ class Bk {
+
 }
