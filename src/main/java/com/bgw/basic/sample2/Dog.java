@@ -1,4 +1,4 @@
-package com.bgw.basic;
+package com.bgw.basic.sample2;
 
 /**
  * 说明：
@@ -14,13 +14,6 @@ public class Dog extends Animal {
     @Override
     protected void someAction() {
         System.out.println("HelloWorld");
-
-        Bk bk = new Bk() {
-            
-        };
     }
 }
 
- class Bk {
-
-}

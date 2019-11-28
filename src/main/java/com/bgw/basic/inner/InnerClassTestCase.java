@@ -15,7 +15,12 @@ public class InnerClassTestCase {
                 System.out.println("k = " + s);
                 System.out.println("Anonymous InnerClass");
             }
+
+            public void k() {
+                System.out.println(2);
+            }
         };
+
     }
 
     public class InnerClass {

@@ -1,4 +1,4 @@
-package com.bgw.basic;
+package com.bgw.basic.sample2;
 
 /**
  * 说明：
