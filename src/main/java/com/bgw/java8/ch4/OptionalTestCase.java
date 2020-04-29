@@ -1,5 +1,10 @@
 package com.bgw.java8.ch4;
 
+import com.google.common.collect.Lists;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -19,5 +24,6 @@ public class OptionalTestCase {
         System.out.println(ao == bo);
         System.out.println(ao.equals(bo));
 
+        List<Integer> list = new ArrayList<>(Arrays.asList(1, 3, 4, 5, 7));
     }
 }
