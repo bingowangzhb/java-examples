@@ -1,5 +1,4 @@
 package com.bgw.encrytion;
-
 import org.apache.commons.codec.binary.Base64;
 
 import java.nio.charset.StandardCharsets;
@@ -45,7 +44,7 @@ public class RsaEncryptionTestCase {
     private static void testRsa() throws Exception {
         String[] keys = RSAUtils.genKeyPair();
 
-        String publicKey = keys[0];
+        String publicKey = keys[0];     
         String privateKey = keys[1];
 
         System.out.println("publicKey: " + publicKey);
