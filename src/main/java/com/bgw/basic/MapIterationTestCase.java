@@ -1,5 +1,6 @@
 package com.bgw.basic;
 
+import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -27,16 +28,14 @@ public class MapIterationTestCase {
 
     public static void main(String[] args) {
         // visitWithIterationEntrySet();
-        visitWithIterationKeySet();
-        visitWithForEachEntrySet();
-        visitWithForEachKeySet();
-        visitWithLambda();
+        // visitWithIterationKeySet();
+        // visitWithForEachEntrySet();
+        //visitWithForEachKeySet();
+        // visitWithLambda();
     }
 
     private static void visitWithIterationEntrySet() {
-        Iterator<Map.Entry<String, String>> iterator = map.entrySet().iterator();
-        while (iterator.hasNext()) {
-            Map.Entry<String, String> player = iterator.next();
+        for (Map.Entry<String, String> player : map.entrySet()) {
             System.out.println("No:" + player.getKey());
             System.out.println("Name:" + player.getValue());
         }
@@ -44,9 +43,7 @@ public class MapIterationTestCase {
     }
 
     private static void visitWithIterationKeySet() {
-        Iterator<String> iterator = map.keySet().iterator();
-        while (iterator.hasNext()) {
-            String key = iterator.next();
+        for (String key : map.keySet()) {
             System.out.println("No:" + key);
             System.out.println("Name:" + map.get(key));
         }
