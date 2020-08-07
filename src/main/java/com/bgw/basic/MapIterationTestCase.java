@@ -13,20 +13,21 @@ import java.util.Map;
  **/
 public class MapIterationTestCase {
 
-    private static Map<String, String> map = new HashMap<>(16);
+    private final static Map<String, String> MAP = new HashMap<>(8);
 
     static {
-        map.put("13", "James Harden");
-        map.put("24", "Kobe Bryant");
-        map.put("23", "LeBron James");
-        map.put("1", "Tracy McGrady");
-        map.put("30", "Stephen Curry");
-        map.put("11", "Yao Ming");
-        map.put("3", "Dwyane Wade");
+        MAP.put("13", "James Harden");
+        MAP.put("24", "Kobe Bryant");
+        MAP.put("23", "LeBron James");
+        MAP.put("1", "Tracy McGrady");
+        MAP.put("30", "Stephen Curry");
+        MAP.put("11", "Yao Ming");
+        MAP.put("3", "Dwyane Wade");
     }
 
 
     public static void main(String[] args) {
+        // 推荐使用EntrySet和java8的Map.forEach
         // visitWithIterationEntrySet();
         // visitWithIterationKeySet();
         // visitWithForEachEntrySet();
@@ -35,7 +36,7 @@ public class MapIterationTestCase {
     }
 
     private static void visitWithIterationEntrySet() {
-        for (Map.Entry<String, String> player : map.entrySet()) {
+        for (Map.Entry<String, String> player : MAP.entrySet()) {
             System.out.println("No:" + player.getKey());
             System.out.println("Name:" + player.getValue());
         }
@@ -43,15 +44,15 @@ public class MapIterationTestCase {
     }
 
     private static void visitWithIterationKeySet() {
-        for (String key : map.keySet()) {
+        for (String key : MAP.keySet()) {
             System.out.println("No:" + key);
-            System.out.println("Name:" + map.get(key));
+            System.out.println("Name:" + MAP.get(key));
         }
 
     }
 
     private static void visitWithForEachEntrySet() {
-        for (Map.Entry<String, String> player : map.entrySet()) {
+        for (Map.Entry<String, String> player : MAP.entrySet()) {
             System.out.println("No:" + player.getKey());
             System.out.println("Name:" + player.getValue());
         }
@@ -59,31 +60,31 @@ public class MapIterationTestCase {
     }
 
     private static void visitWithForEachKeySet() {
-        for (String key : map.keySet()) {
+        for (String key : MAP.keySet()) {
             System.out.println("No:" + key);
-            System.out.println("Name:" + map.get(key));
+            System.out.println("Name:" + MAP.get(key));
         }
 
     }
 
     private static void visitWithLambda() {
-        map.forEach((k, v) -> {
+        MAP.forEach((k, v) -> {
             System.out.println("No:" + k);
             System.out.println("Name:" + v);
         });
 
-        map.keySet().removeIf(key -> key.equals("22"));
+        MAP.keySet().removeIf(key -> key.equals("22"));
     }
 
     private static void visitWithStream() {
-        map.entrySet().stream().forEach(entry -> {
+        MAP.entrySet().stream().forEach(entry -> {
             System.out.println("No:" + entry.getKey());
             System.out.println("Name:" + entry.getValue());
         });
     }
 
     private static void visitWithParallelStream() {
-        map.entrySet().parallelStream().forEach(entry -> {
+        MAP.entrySet().parallelStream().forEach(entry -> {
             System.out.println("No:" + entry.getKey());
             System.out.println("Name:" + entry.getValue());
         });

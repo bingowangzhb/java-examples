@@ -22,12 +22,19 @@ public class BigDecimalTestCase {
         System.out.println(a.multiply(r).setScale(2, RoundingMode.DOWN));
         System.out.println(a.multiply(r).setScale(2, RoundingMode.UP));
 
-        System.out.println(a.multiply(r).setScale(0, RoundingMode.HALF_DOWN).setScale(2));
+        System.out.println(a.multiply(r).setScale(0, RoundingMode.HALF_DOWN));
         System.out.println(a.multiply(r).setScale(0, RoundingMode.HALF_UP));
         System.out.println(a.multiply(r).setScale(0, RoundingMode.DOWN));
-        System.out.println(a.multiply(r).setScale(0, RoundingMode.UP));
+        System.out.println(a.multiply(r).setScale(0, RoundingMode.UP).setScale(2, RoundingMode.UP));
 
+        System.out.println("-----------------------------------------------------------------");
 
+        BigDecimal b = new BigDecimal("0.03");
+
+        BigDecimal c = new BigDecimal("235");
+
+        BigDecimal d = c.multiply(BigDecimal.ONE.add(b));
+        System.out.println(d);
 
 
     }

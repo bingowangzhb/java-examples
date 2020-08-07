@@ -5,7 +5,7 @@ package com.bgw.juc;
  *
  * @author ShujuboDev
  */
-public class SpuriousWakeupsTest {
+public class SpuriousWakeupTest {
 
     public static void main(String[] args) {
         final Store store = new Store();
@@ -14,31 +14,35 @@ public class SpuriousWakeupsTest {
             for (int i = 0; i < 20; i++) {
                 store.put();
             }
-        }, "Producer").start();
+        }, "A").start();
 
         new Thread(() -> {
             for (int i = 0; i < 20; i++) {
-//                try {
-//                    Thread.sleep(200);//放大问题
-//                }
-//                catch (InterruptedException e) {
-//                    e.printStackTrace();
-//                }
+                store.put();
+            }
+        }, "B").start();
+
+        new Thread(() -> {
+            for (int i = 0; i < 20; i++) {
                 store.get();
             }
-        }, "Consumer").start();
+        }, "C").start();
+
+        new Thread(() -> {
+            for (int i = 0; i < 20; i++) {
+                store.get();
+            }
+        }, "D").start();
     }
 }
 
 class Store {
-    // 总库存
-    public static final int TOTAL = 1;
-    // 现有
     private int num = 0;
 
     public synchronized void put() {
-        while (num >= TOTAL) {
-            System.out.println("库存已满");
+        // 如果为if 会存在虚假唤醒
+        while (num != 0) {
+            System.out.println("库存已满 线程" + Thread.currentThread().getName() + "被阻塞");
             try {
                 this.wait();
             }
@@ -48,13 +52,14 @@ class Store {
 
         }
 
-        System.out.println(Thread.currentThread().getName() + "\t num : " + (++num));
+        System.out.println(Thread.currentThread().getName() + "\t 被唤醒 生产 num : " + (++num));
         this.notifyAll();
     }
 
     public synchronized void get() {
-        while (num <= 0) {
-            System.out.println("库存不足");
+        // 如果为if 会存在虚假唤醒
+        while (num == 0) {
+            System.out.println("库存不足 线程" + Thread.currentThread().getName() + "被阻塞");
             try {
                 this.wait();
             }
@@ -63,7 +68,7 @@ class Store {
             }
 
         }
-        System.out.println(Thread.currentThread().getName() + "\t num : " + (--num));
+        System.out.println(Thread.currentThread().getName() + "\t 被唤醒 消费 num : " + (--num));
         this.notifyAll();
     }
 }
