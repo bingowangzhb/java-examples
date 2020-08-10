@@ -6,7 +6,10 @@ package com.bgw.juc;
  * @author ShujuboDev 2019/7/11 9:48
  */
 public class VolatileObjectTest implements Runnable {
-    private ObjectA a; // 加上volatile 就可以正常结束While循环了
+    /**
+     *  加上volatile 就可以正常结束While循环了
+     */
+    private ObjectA a;
 
     public VolatileObjectTest(ObjectA a) {
         this.a = a;

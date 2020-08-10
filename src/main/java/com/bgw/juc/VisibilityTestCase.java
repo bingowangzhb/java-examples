@@ -11,7 +11,7 @@ public class VisibilityTestCase {
 
 
     static class VisibilityThread extends Thread {
-        private boolean stop;
+        private volatile boolean stop;
 
         @Override
         public void run() {
