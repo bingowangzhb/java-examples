@@ -1,5 +1,7 @@
 package com.bgw.java8.date;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.temporal.ChronoUnit;
 import java.util.HashMap;
@@ -34,6 +36,8 @@ public class LocalTimeSplitTest {
         map.put("1", "1");
 
 
+        LocalDateTime ldt = LocalDateTime.parse("2020-08-09T22:00:00");
+        System.out.println(ldt);
 
 
 
