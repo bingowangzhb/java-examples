@@ -16,9 +16,7 @@ public class ThreadLocalTest {
         ExecutorService es = Executors.newFixedThreadPool(100);
         FooService fooService = new FooService();
         for (int i = 0; i < 100; i++) {
-            es.execute(() -> {
-                fooService.business();
-            });
+            es.execute(fooService::business);
         }
 
 

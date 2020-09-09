@@ -15,6 +15,7 @@ public class FooService {
 
         try{
             Integer i = get();
+            i++;
             System.out.println(Thread.currentThread().getName() + " , i = " + i);
         }
         finally {
