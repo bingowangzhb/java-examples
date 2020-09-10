@@ -15,7 +15,6 @@ import java.util.stream.IntStream;
  */
 public class ProducerConsumerTest {
 
-
     public static void main(String[] args) {
 
         Lock lock = new ReentrantLock();
@@ -39,11 +38,7 @@ public class ProducerConsumerTest {
                 sr.consume();
             }, "T-C-" + i).start();
         });
-
-
     }
-
-
 
 
     public static void runWithLockSupport() {
@@ -55,8 +50,8 @@ public class ProducerConsumerTest {
 class ShareResource {
     private int count = 0;
     private final Lock lock;
-    private Condition canConsumeCondition;
-    private Condition canProduceCondition;
+    private final Condition canConsumeCondition;
+    private final Condition canProduceCondition;
 
     public ShareResource(Lock lock) {
         this.lock = lock;
