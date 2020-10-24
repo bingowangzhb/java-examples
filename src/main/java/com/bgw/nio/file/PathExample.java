@@ -20,7 +20,7 @@ public class PathExample {
     }
 
     private static void testPath() {
-        Path path = Paths.get("e:\\a.txt");
+        Path path = Paths.get("e:\\names.txt");
         Path path2 = Paths.get("c:\\data", "myfile.txt");
         System.out.println(path2.getFileName() == path2);
 
@@ -43,6 +43,6 @@ public class PathExample {
     }
 
     public static void testOverridingFile () {
-        Path path = Paths.get("e:\\a.txt");
+        Path path = Paths.get("e:\\names.txt");
     }
 }

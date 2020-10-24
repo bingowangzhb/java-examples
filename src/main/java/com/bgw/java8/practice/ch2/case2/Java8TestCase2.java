@@ -74,7 +74,7 @@ public class Java8TestCase2 {
 
 
     public static String processFile(BufferedReaderProcessor brp) throws Exception {
-        try (BufferedReader br = new BufferedReader(new FileReader("a.txt"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader("names.txt"))) {
             return brp.process(br);
         }
     }
