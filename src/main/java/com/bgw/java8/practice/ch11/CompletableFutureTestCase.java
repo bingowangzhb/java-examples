@@ -1,7 +1,6 @@
 package com.bgw.java8.practice.ch11;
 
 import com.google.common.collect.Lists;
-import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.time.StopWatch;
 
@@ -9,7 +8,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Random;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -29,6 +27,7 @@ public class CompletableFutureTestCase {
             sleep(t, TimeUnit.SECONDS);
             return String.valueOf(t);
         });
+
         CompletableFuture<String> f2 = CompletableFuture.supplyAsync(() -> {
             int t = getRandom(5, 10);
             System.out.println("f2 t : " + t);

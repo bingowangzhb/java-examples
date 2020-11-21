@@ -15,7 +15,7 @@ public class LambdaTestCase {
         List<String> ss = ids.stream()
                 .filter(t -> t > 2)
                 .map(t -> "adc" + t)
-                .peek(t -> System.out.println(t))
+                .peek(System.out::println)
                 .collect(Collectors.toList());
     }
 }
