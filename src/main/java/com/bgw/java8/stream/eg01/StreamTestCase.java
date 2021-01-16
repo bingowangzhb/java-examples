@@ -1,12 +1,15 @@
-package com.bgw.java8.stream.example01;
+package com.bgw.java8.stream.eg01;
 
 import org.junit.Test;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 /**
  * @author zhibin.wang
@@ -14,7 +17,39 @@ import java.util.stream.Collectors;
 public class StreamTestCase {
     public static void main(String[] args) {
         List<String> names = Collections.singletonList("James");
-        System.out.println(names.stream().findAny().get());
+        // System.out.println(names.stream().findAny().get());
+
+
+        List<Integer> list = new ArrayList<>();
+
+        int max = list.stream()
+                .max(Integer::compareTo)
+                .orElse(-1);
+
+        System.out.println("max = " + max);
+
+
+        int a = 0;
+        int b = 1;
+        int c = 1;
+
+        if (a == 0 && b == 0 && c == 0) {
+
+        }
+        else {
+            if (a == 1) {
+                System.out.println("a = " + a);
+            }
+            else if (b == 1) {
+                System.out.println("b = " + b);
+            }
+            else if (c == 1) {
+                System.out.println("c = " + c);
+            }
+        }
+
+
+
     }
 
 
@@ -26,7 +61,14 @@ public class StreamTestCase {
 
 
 
-        //orders.stream().reduce((o1, o2) -> o1.getServiceAmount().add(o1.getProductAmount()))
+        BigDecimal sum = orders.stream().map(o -> o.getProductAmount().add(o.getServiceAmount()))
+                .reduce(BigDecimal.ZERO, BigDecimal::add);
+
+        System.out.println("sum = " + sum);
+
+
+
+
 
 
         orders.forEach(System.out::println);

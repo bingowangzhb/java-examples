@@ -1,5 +1,8 @@
 package com.bgw.basic;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * SwapValueTest
  *
@@ -9,8 +12,30 @@ package com.bgw.basic;
 public class SwapValueTest {
 
     public static void main(String[] args) {
-        //swap(2, 45);
-        swap2();
+        // swap(2, 45);
+        // swap2();
+
+
+
+//        Integer a = 269;
+//        Integer b = 269;
+//
+//        Integer c = 19;
+//        Integer d = 19;
+//
+//
+//        System.out.println("a == b : " + (a == b));
+//        System.out.println("a.equals(b) : " + a.equals(b));
+            
+        List<String> list = new ArrayList<>();
+
+
+
+        for (String s : list) {
+            System.out.println("s = " + s);
+        }
+
+
     }
 
 

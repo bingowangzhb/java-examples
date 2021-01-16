@@ -69,7 +69,7 @@ public class ResourceMain {
 
     private static void loadResourceWithFile() {
         // 显然通过这种间接的方式去构建一个File对象也是可行的 只是比较绕
-        String filePath = ClassLoader.getSystemResource("demo.properties").getFile();
+        String filePath = ClassLoader.getSystemResource("config/jdbc/jdbc.properties").getFile();
         System.out.println("filePath = " + filePath);
         System.out.println(new File(filePath).exists()); //true
 
