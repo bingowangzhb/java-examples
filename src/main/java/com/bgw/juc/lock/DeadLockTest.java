@@ -13,11 +13,9 @@ public class DeadLockTest {
 
         ShareObject shareObject = new ShareObject(lockA, lockB);
 
-        new Thread(() -> {
-            shareObject.m1();
-        }, "A").start();new Thread(() -> {
-            shareObject.m2();
-        }, "B").start();
+        new Thread(shareObject::m1, "A").start();
+
+        new Thread(shareObject::m2, "B").start();
 
     }
 
