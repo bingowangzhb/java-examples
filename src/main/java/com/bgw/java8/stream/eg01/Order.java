@@ -1,4 +1,4 @@
-package com.bgw.java8.stream.example01;
+package com.bgw.java8.stream.eg01;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

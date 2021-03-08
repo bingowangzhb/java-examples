@@ -1,4 +1,4 @@
-package com.bgw.java8.stream.example02;
+package com.bgw.java8.stream.eg02;
 
 import java.util.Arrays;
 import java.util.HashMap;
