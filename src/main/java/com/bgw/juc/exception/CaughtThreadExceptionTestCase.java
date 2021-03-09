@@ -31,6 +31,10 @@ public class CaughtThreadExceptionTestCase {
 
         }).start();
 
+
+
+        Runnable target;
+
         ThreadGroup tg;
     }
 }
