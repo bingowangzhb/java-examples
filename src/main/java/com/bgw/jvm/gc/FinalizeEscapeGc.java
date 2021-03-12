@@ -1,4 +1,4 @@
-package com.bgw.gc;
+package com.bgw.jvm.gc;
 
 import java.util.concurrent.TimeUnit;
 
