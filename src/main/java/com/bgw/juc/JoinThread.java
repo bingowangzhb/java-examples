@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 /**
- * 说明：
+ * 说明：如果一个线程A执行了线程B.join()方法，那么当前线程A等待线程B终止之后才从join()返回
  *
  * @author ShujuboDev 2018/11/12 15:45
  */
@@ -14,7 +14,35 @@ public class JoinThread {
 
 
     public static void main(String[] args) {
-        List<Thread> threads = IntStream.range(1, 3).mapToObj(JoinThread::newThread).collect(Collectors.toList());
+        testThreadJoin();
+    }
+
+    private static void testThreadJoin() {
+        Thread t = new Thread(() -> {
+            System.out.println(" 我去买醋了 ");
+            sleepTwoSeconds();
+            System.out.println(" 醋买回来了 ");
+        });
+
+        t.start();
+        try {
+            t.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println(" 开始吃饺子 ");
+
+
+    }
+
+
+
+
+    private static void testThreadsJoin() {
+        List<Thread> threads = IntStream.range(1, 3)
+                .mapToObj(JoinThread::newThread)
+                .collect(Collectors.toList());
         threads.forEach(Thread::start);
 
 
@@ -48,7 +76,7 @@ public class JoinThread {
 
     private static void sleepTwoSeconds() {
         try {
-            TimeUnit.SECONDS.sleep(2);
+            TimeUnit.SECONDS.sleep(100);
         }
         catch (InterruptedException e) {
             e.printStackTrace();
