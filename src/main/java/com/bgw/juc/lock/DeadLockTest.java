@@ -1,5 +1,7 @@
 package com.bgw.juc.lock;
 
+import java.util.stream.IntStream;
+
 /**
  * 说明：DeadLockTest
  *
@@ -13,9 +15,17 @@ public class DeadLockTest {
 
         ShareObject shareObject = new ShareObject(lockA, lockB);
 
-        new Thread(shareObject::m1, "A").start();
+        System.out.println("Runtime.getRuntime().availableProcessors() = " + Runtime.getRuntime().availableProcessors());
+        // 10000000万个数  用线程来取 每个模拟处理100ms
+        for (int i = 0; i < 8; i++) {
+            new Thread(() -> {
+                while (true) {}
+            }, "T-" + i).start();
+        }
 
-        new Thread(shareObject::m2, "B").start();
+        //new Thread(shareObject::m1, "A").start();
+
+        //new Thread(shareObject::m2, "B").start();
 
     }
 
