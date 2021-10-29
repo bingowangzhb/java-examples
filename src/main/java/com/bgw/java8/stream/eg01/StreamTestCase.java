@@ -59,18 +59,11 @@ public class StreamTestCase {
                 new Order("2", new BigDecimal(4), new BigDecimal(6)),
                 new Order("3", new BigDecimal(5), new BigDecimal(9)));
 
-
-
-        BigDecimal sum = orders.stream().map(o -> o.getProductAmount().add(o.getServiceAmount()))
+        BigDecimal sum = orders.stream()
+                .map(o -> o.getProductAmount().add(o.getServiceAmount()))
                 .reduce(BigDecimal.ZERO, BigDecimal::add);
 
         System.out.println("sum = " + sum);
-
-
-
-
-
-
         orders.forEach(System.out::println);
 
         List<String> orderIds = orders.stream()

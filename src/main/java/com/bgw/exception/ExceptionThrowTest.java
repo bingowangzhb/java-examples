@@ -8,14 +8,14 @@ package com.bgw.exception;
  **/
 public class ExceptionThrowTest {
 
-
     public static void main(String[] args) {
 
         ExceptionThrowTest test = new ExceptionThrowTest();
         //test.wrong();
         try {
             test.right2();
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -26,7 +26,8 @@ public class ExceptionThrowTest {
         try {
             System.out.println("info");
             throw new RuntimeException("info ex");
-        } finally {
+        }
+        finally {
             System.out.println("infof");
             throw new RuntimeException("infof ex");
         }
@@ -39,16 +40,20 @@ public class ExceptionThrowTest {
         try {
             System.out.println("try");
             throw new RuntimeException("try");
-        } catch (Exception ex) {
+        }
+        catch (Exception ex) {
             e = ex;
-        } finally {
+        }
+        finally {
             System.out.println("finally");
             try {
                 throw new RuntimeException("finally");
-            } catch (Exception ex) {
+            }
+            catch (Exception ex) {
                 if (e!= null) {
                     e.addSuppressed(ex);
-                } else {
+                }
+                else {
                     e = ex;
                 }
             }

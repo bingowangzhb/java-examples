@@ -57,9 +57,7 @@ public class MapTestCase {
 
     @Test
     public void testCompute() {
-
         S_MAP.forEach((k, v) -> {
-
             S_MAP.compute(k, (key, val) -> Integer.parseInt(key) + val * 10);
         });
 

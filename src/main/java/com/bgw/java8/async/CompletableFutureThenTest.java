@@ -1,5 +1,7 @@
 package com.bgw.java8.async;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 /**
@@ -12,7 +14,10 @@ public class CompletableFutureThenTest {
 
     public static void main(String[] args) {
 
-        thenApply();
+        //thenApply();
+
+        List<String> ss = Arrays.asList("a,b".split(","));
+        System.out.println("ss = " + ss);
 
     }
 

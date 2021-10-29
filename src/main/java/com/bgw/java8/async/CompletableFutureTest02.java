@@ -52,7 +52,9 @@ public class CompletableFutureTest02 {
     static void sleep(int t, TimeUnit u) {
         try {
             u.sleep(t);
-        } catch (InterruptedException e) {
+        }
+        catch (InterruptedException e) {
+
         }
     }
 }

@@ -12,6 +12,10 @@ public class ClazzApiTest {
 
     public static void main(String[] args) {
 
+        // 打印全类名 com.bgw.reflection.clazz.ClazzApiTest
+        System.out.println("ClazzApiTest.class.getName() = " + ClazzApiTest.class.getName());
+
+
         // 确定此 Class 对象表示的类或接口是否与指定的 Class 参数表示的类或接口相同，或者是其超类或超接口。 如果是，则返回 true； 否则返回false。
         // 如果此 Class 对象表示原始类型，则如果指定的 Class 参数正是此 Class 对象，则此方法返回 true； 否则返回false。
 
@@ -32,10 +36,6 @@ public class ClazzApiTest {
         // A.class.isAssignableFrom(B.class)
         // A是B的父类 返回true
     }
-
-
-
-
 }
 
 

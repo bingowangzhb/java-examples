@@ -14,18 +14,13 @@ import java.net.SocketException;
  * @author ShujuboDev
  */
 public class Server {
-
-
     public static void main(String[] args) throws Exception {
-
         ServerSocket server = new ServerSocket(8899);
         Socket client = null;
-
         boolean f = true;
         while (f) {
             client = server.accept();
             System.out.println("与客户端连接成功" + client.getInetAddress());
-
             new Thread(new ServerThread(client)).start();
         }
 

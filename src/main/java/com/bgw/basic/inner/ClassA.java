@@ -9,7 +9,6 @@ package com.bgw.basic.inner;
 public class ClassA {
 
     public void doSomething(int k) {
-
         ClassB b1 = new ClassB() {
             public void doSomething() {
                 System.out.println("b1.doSth");
@@ -22,14 +21,11 @@ public class ClassA {
         };
 
         b1.b();
-
         ClassC c1 = new ClassC() {
             void doSomething() {
                 System.out.println("c1.doSth");
             }
         };
-
-
         ClassB b = new ClassB();
         b.b();
         ClassC c = new ClassC();

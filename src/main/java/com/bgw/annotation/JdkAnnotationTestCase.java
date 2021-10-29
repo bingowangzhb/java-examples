@@ -1,5 +1,7 @@
 package com.bgw.annotation;
 
+import org.springframework.core.annotation.AnnotationUtils;
+
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.concurrent.ThreadPoolExecutor;
@@ -9,9 +11,12 @@ import java.util.concurrent.ThreadPoolExecutor;
  *
  * @author ab
  */
-public class AnnotationDemoTestCase {
+public class JdkAnnotationTestCase {
 
     public static void main(String[] args) throws Exception {
+        jdkAnnotation();
+    }
+    private static void jdkAnnotation() throws NoSuchFieldException, NoSuchMethodException {
         // 获取到类对应的Class的实例
         Class<AnnotationDemo> clazz = AnnotationDemo.class;
 
@@ -31,6 +36,7 @@ public class AnnotationDemoTestCase {
         Method defaultMethod = clazz.getMethod("defaultMth");
         MyAnnotation defaultMethodAnnotation = defaultMethod.getAnnotation(MyAnnotation.class);
         System.out.println(defaultMethodAnnotation.getValue());
-
     }
+
+
 }

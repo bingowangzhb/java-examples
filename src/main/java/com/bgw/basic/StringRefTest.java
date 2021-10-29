@@ -15,6 +15,17 @@ public class StringRefTest {
 //        System.out.println(s);
 //        CyclicBarrier barrier = new CyclicBarrier(2);
 //        barrier.await();
+
+        String a = "java";
+
+        appendStr(a);
+
+        System.out.println("a = " + a);
+
+    }
+
+    private static void appendStr(String a) {
+        a += "d";
     }
 
 
