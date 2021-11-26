@@ -1,41 +1,138 @@
 package com.bgw.reflection.clazz;
 
+import com.bgw.proxy.HelloService;
+import com.bgw.reflection.Drivable;
+import com.bgw.reflection.Flyable;
+import com.bgw.reflection.Gender;
 import com.bgw.reflection.Man;
 import com.bgw.reflection.People;
+import org.junit.Test;
 
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * @author ambow
  * @since 2021/8/30 14:04
  */
 public class ClazzApiTest {
+    public List<Class<?>> classes = new ArrayList<>(Arrays.asList(String.class, Integer[].class, int.class,
+            long[].class, List.class, Void.class, Map.class, Gender.class));
 
-    public static void main(String[] args) {
+    @Test
+    public void testClasses() {
+        System.out.println("ClazzApiTest.class.getClasses() = " + Arrays.toString(ClazzApiTest.class.getClasses()));
 
-        // 打印全类名 com.bgw.reflection.clazz.ClazzApiTest
-        System.out.println("ClazzApiTest.class.getName() = " + ClazzApiTest.class.getName());
-
-
-        // 确定此 Class 对象表示的类或接口是否与指定的 Class 参数表示的类或接口相同，或者是其超类或超接口。 如果是，则返回 true； 否则返回false。
-        // 如果此 Class 对象表示原始类型，则如果指定的 Class 参数正是此 Class 对象，则此方法返回 true； 否则返回false。
-
-        // true
-        System.out.println("People.class.isAssignableFrom(Man.class) = " + People.class.isAssignableFrom(Man.class));
-        // true
-        System.out.println("People.class.isAssignableFrom(People.class) = " + People.class.isAssignableFrom(People.class));
-        // false
-        System.out.println("People.class.isAssignableFrom(String.class) = " + People.class.isAssignableFrom(String.class));
-
-        // false
-        System.out.println("int.class.isAssignableFrom(Integer.class) = " + int.class.isAssignableFrom(Integer.class));
-        // true
-        System.out.println("int.class.isAssignableFrom(int.class) = " + int.class.isAssignableFrom(int.class));
-
-        System.out.println("Comparable.class.isAssignableFrom(Integer.class) = " + Comparable.class.isAssignableFrom(Integer.class));
-
-        // A.class.isAssignableFrom(B.class)
-        // A是B的父类 返回true
     }
-}
 
+
+    @Test
+    public void testDeclaringClass() {
+
+        // 注意：getEnclosingClass获取的是直接定义该类的外部类Class实例、这点和getDeclaringClass一致
+        System.out.println("InnerClass.class.getDeclaringClass() = " + InnerClass.class.getDeclaringClass());
+        System.out.println("InnerClass.class.getEnclosingClass() = " + InnerClass.class.getEnclosingClass());
+
+        System.out.println("InnerClass.InnerInnerClass.class.getDeclaringClass() = " + InnerClass.InnerInnerClass.class.getDeclaringClass());
+        System.out.println("InnerClass.InnerInnerClass.class.getEnclosingClass() = " + InnerClass.InnerInnerClass.class.getEnclosingClass());
+
+
+        InnerClass innerClass = new InnerClass();
+        innerClass.getInnerService().sayHello();
+
+    }
+
+    @Test
+    public void testDeclaredClass() {
+        System.out.println("ClazzApiTest.class.getDeclaredClasses() = " + Arrays.toString(ClazzApiTest.class.getDeclaredClasses()));
+        System.out.println("InnerService.class.getDeclaredClasses() = " + Arrays.toString(InnerService.class.getDeclaredClasses()));
+        System.out.println("Man.class.getDeclaredClasses() = " + Arrays.toString(Man.class.getDeclaredClasses()));
+    }
+
+
+    @Test
+    public void testModifiers() {
+        System.out.println("Object.class.getModifiers() = " + Object.class.getModifiers());
+        System.out.println("ClazzApiTest.class.getModifiers() = " + ClazzApiTest.class.getModifiers());
+        System.out.println("Man.class.getModifiers() = " + Man.class.getModifiers());
+        System.out.println("Drivable.class.getModifiers() = " + Drivable.class.getModifiers());
+        System.out.println("Gender.class.getModifiers() = " + Gender.class.getModifiers());
+        System.out.println("Serializable.class.getModifiers() = " + Serializable.class.getModifiers());
+        System.out.println("Flyable.class.getModifiers() = " + Flyable.class.getModifiers());
+    }
+
+    @Test
+    public void testIsAssignableFrom() {
+        System.out.println("Object.class.isAssignableFrom(String.class) = " + Object.class.isAssignableFrom(String.class));
+        System.out.println("Object.class.isAssignableFrom(List.class) = " + Object.class.isAssignableFrom(List.class));
+        System.out.println("List.class.isAssignableFrom(ArrayList.class) = " + List.class.isAssignableFrom(ArrayList.class));
+        System.out.println("String.class.isAssignableFrom(String.class) = " + String.class.isAssignableFrom(String.class));
+        System.out.println("String.class.isAssignableFrom(Integer.class) = " + String.class.isAssignableFrom(Integer.class));
+        System.out.println("Object.class.isAssignableFrom(String[].class) = " + Object.class.isAssignableFrom(String[].class));
+        System.out.println("int.class.isAssignableFrom(int.class) = " + int.class.isAssignableFrom(int.class));
+        System.out.println("int.class.isAssignableFrom(Integer.class) = " + int.class.isAssignableFrom(Integer.class));
+        System.out.println("Integer.class.isAssignableFrom(int.class) = " + Integer.class.isAssignableFrom(int.class));
+    }
+
+    @Test
+    public void testName() {
+        for (Class<?> clazz : classes) {
+            System.out.println(clazz.getSimpleName() + " : " + clazz.getName());
+        }
+    }
+
+    @Test
+    public void testCanonicalName() {
+        for (Class<?> clazz : classes) {
+            System.out.println(clazz.getSimpleName() + " : " + clazz.getCanonicalName());
+        }
+    }
+
+    @Test
+    public void testToString() {
+        for (Class<?> clazz : classes) {
+            System.out.println(clazz.getSimpleName() + ".toString() = " + clazz.toString());
+        }
+    }
+
+    @Test
+    public void testToGenericString() {
+        for (Class<?> clazz : classes) {
+            System.out.println(clazz.getSimpleName() + ".toGenericString() = " + clazz.toGenericString());
+        }
+    }
+
+
+
+    private class InnerClass {
+
+        private class InnerInnerClass {
+
+        }
+
+        InnerService getInnerService() {
+            return new InnerService() {
+                @Override
+                public void sayHello() {
+                    // getEnclosingClass对匿名内部类也有效
+                    System.out.println(this.getClass().getEnclosingClass());
+                    System.out.println(this.getClass().getDeclaringClass());
+                }
+            };
+        }
+    }
+
+    private interface InnerService {
+        void sayHello();
+    }
+
+
+    public class PublicInnerClass {}
+
+    public interface PublicService {}
+}
 

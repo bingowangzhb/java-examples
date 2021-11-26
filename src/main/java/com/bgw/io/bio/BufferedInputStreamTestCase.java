@@ -2,6 +2,7 @@ package com.bgw.io.bio;
 
 import java.io.BufferedInputStream;
 import java.io.ByteArrayInputStream;
+import java.util.Arrays;
 
 /**
  * BufferedInputStreamTestCase
@@ -12,6 +13,10 @@ import java.io.ByteArrayInputStream;
 public class BufferedInputStreamTestCase {
 
     public static void main(String[] args) throws Exception {
+
+        String s = "1";
+        byte[] ss = s.getBytes();
+        System.out.println("s.getBytes()  = " + Arrays.toString(s.getBytes()));
 
         byte[] bytes = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
         ByteArrayInputStream bais = new ByteArrayInputStream(bytes);

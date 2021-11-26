@@ -19,6 +19,7 @@ public class Server {
         Socket client = null;
         boolean f = true;
         while (f) {
+            // 如果没有连接进来，会在此阻塞
             client = server.accept();
             System.out.println("与客户端连接成功" + client.getInetAddress());
             new Thread(new ServerThread(client)).start();
@@ -28,10 +29,8 @@ public class Server {
     }
 
 
-
-
     static class ServerThread extends Thread {
-        private Socket client;
+        private final Socket client;
 
         public ServerThread(Socket client) {
             this.client = client;
@@ -40,11 +39,12 @@ public class Server {
         @Override
         public void run() {
             try {
-                // 获取socket输出流 向客户端发送数据
-                PrintStream out = new PrintStream(client.getOutputStream());
+
                 // 获取socket输入流 用来接收从客户端发来的信息
                 BufferedReader br = new BufferedReader(new InputStreamReader(client.getInputStream()));
 
+                // 获取socket输出流 向客户端发送数据
+                PrintStream out = new PrintStream(client.getOutputStream());
                 boolean flag = true;
 
                 while (flag) {

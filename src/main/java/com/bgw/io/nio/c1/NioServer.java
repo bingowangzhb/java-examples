@@ -21,7 +21,6 @@ public class NioServer {
 
         Selector selector = Selector.open();
 
-
         ServerSocketChannel serverSocketChannel = ServerSocketChannel.open();
         System.out.println(serverSocketChannel.hashCode());
         serverSocketChannel.bind(new InetSocketAddress("localhost", port));

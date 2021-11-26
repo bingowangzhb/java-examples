@@ -48,8 +48,11 @@ public class StreamTestCase {
             }
         }
 
+        List<Integer> nums = Arrays.asList(1, 3, 4);
 
-
+        List<String> collect = names.stream()
+                .map(String::valueOf)
+                .collect(Collectors.toList());
     }
 
 
