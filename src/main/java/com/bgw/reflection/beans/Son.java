@@ -1,6 +1,6 @@
-package com.bgw.reflection;
+package com.bgw.reflection.beans;
 
-public class Man extends People implements Drivable {
+public class Son extends Father {
 
     private String privateManField;
 
@@ -9,9 +9,6 @@ public class Man extends People implements Drivable {
     private static String privateStaticManField;
 
     public static String publicStaticManField;
-
-    @Override
-    public void drive() {}
 
     private void privateManMethod() {}
 

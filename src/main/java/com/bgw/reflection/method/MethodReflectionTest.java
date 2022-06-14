@@ -1,8 +1,6 @@
-package com.bgw.reflection.clazz;
+package com.bgw.reflection.method;
 
-import com.bgw.reflection.Drivable;
-import com.bgw.reflection.Man;
-import com.bgw.reflection.People;
+import com.bgw.reflection.beans.Drivable;
 import org.junit.Test;
 
 import java.lang.reflect.Method;
@@ -15,7 +13,7 @@ import java.util.stream.Collectors;
  * @author ambow
  * @since 2021/11/26 16:43
  */
-public class MethodApiTest {
+public class MethodReflectionTest {
 
     @Test
     public void testDeclaringClass() {

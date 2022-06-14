@@ -1,5 +1,8 @@
 package com.bgw.reflection;
 
+import com.bgw.reflection.beans.Father;
+import org.junit.Test;
+
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.Arrays;
@@ -12,18 +15,11 @@ import java.util.Arrays;
  */
 public class ReflectionTest {
 
-    public static void main(String[] args) throws Exception {
-
-        testClass();
-        testField();
-        testMethod();
-
-    }
-
-    private static void testClass() {
-        Class[] classes = Man.class.getClasses();
-        Class[] declaredClasses = Man.class.getDeclaredClasses();
-        Class declaringClass = Man.class.getDeclaringClass();
+    @Test
+    public void testClass() {
+        Class<?>[] classes = Father.class.getClasses();
+        Class<?>[] declaredClasses = Father.class.getDeclaredClasses();
+        Class<?> declaringClass = Father.class.getDeclaringClass();
 
         System.out.println(" -------------getClasses()------------- ");
         Arrays.stream(classes).forEach(c -> {
@@ -39,10 +35,11 @@ public class ReflectionTest {
         System.out.println("declaringClass = " + declaringClass);
     }
 
-    private static void testMethod() {
+    @Test
+    public void testMethod() {
 
-        Method[] methods = Man.class.getMethods();
-        Method[] declaredMethods = Man.class.getDeclaredMethods();
+        Method[] methods = Father.class.getMethods();
+        Method[] declaredMethods = Father.class.getDeclaredMethods();
 
         System.out.println(" -------------getMethods()------------- ");
         Arrays.stream(methods).forEach(m -> {
@@ -57,9 +54,10 @@ public class ReflectionTest {
 
     }
 
-    private static void testField() {
-        Field[] fields = Man.class.getFields();
-        Field[] declaredFields = Man.class.getDeclaredFields();
+    @Test
+    public void testField() {
+        Field[] fields = Father.class.getFields();
+        Field[] declaredFields = Father.class.getDeclaredFields();
 
         System.out.println("fields = " + fields.length);
 

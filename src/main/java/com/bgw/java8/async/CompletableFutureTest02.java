@@ -12,8 +12,6 @@ import java.util.concurrent.TimeUnit;
 public class CompletableFutureTest02 {
 
     public static void main(String[] args) {
-
-
         //任务1：洗水壶->烧开水
         CompletableFuture<Void> f1 =
                 CompletableFuture.runAsync(() -> {
