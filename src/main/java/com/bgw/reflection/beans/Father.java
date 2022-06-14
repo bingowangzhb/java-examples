@@ -2,19 +2,27 @@ package com.bgw.reflection.beans;
 
 public class Father {
 
-    private String privateHumansField;
+    private String privateFatherField;
 
-    public String publicHumansField;
+    public String publicFatherField;
 
-    private static String privateStaticHumansField;
+    private static String privateStaticFatherField;
 
-    public static String publicStaticHumansField;
+    public static String publicStaticFatherField;
 
-    private void privateHumansMethod() {}
+    private void privateFatherMethod() {
+        System.out.println("privateFatherMethod");
+    }
 
-    public void publicHumansMethod() {}
+    public void publicFatherMethod() {
+        System.out.println("publicFatherMethod");
+    }
 
-    private static void privateStaticHumansMethod() {}
+    private static void privateStaticFatherMethod() {
+        System.out.println("privateStaticFatherMethod");
+    }
 
-    public static void publicStaticHumansMethod() {}
+    public static void publicStaticFatherMethod() {
+        System.out.println("publicStaticFatherMethod");
+    }
 }

@@ -1,8 +1,6 @@
-package com.bgw.reflection;
+package com.bgw.reflection.beans;
 
 public interface Drivable {
-
-    String carName = "BMW";
-
+    String name = "drivable";
     void drive();
 }

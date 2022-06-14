@@ -1,4 +1,4 @@
-package com.bgw.reflection.methodaccessor;
+package com.bgw.reflection.method.accessor;
 
 /**
  * @author ambow

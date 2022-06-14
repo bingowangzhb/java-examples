@@ -2,19 +2,33 @@ package com.bgw.reflection.beans;
 
 public class Son extends Father {
 
-    private String privateManField;
+    private String privateSonField;
 
-    public String publicManField;
+    public String publicSonField;
 
-    private static String privateStaticManField;
+    private static String privateStaticSonField;
 
-    public static String publicStaticManField;
+    public static String publicStaticSonField;
 
-    private void privateManMethod() {}
+    private void privateSonMethod() {
+        System.out.println("privateSonField");
+    }
 
-    public void publicManMethod() {}
+    public void publicSonMethod() {
+        System.out.println("publicSonMethod");
+    }
 
-    private static void privateStaticManMethod() {}
+    private static void privateStaticSonMethod() {
+        System.out.println("privateStaticSonMethod");
+    }
 
-    public static void publicStaticManMethod() {}
+    public static void publicStaticSonMethod() {
+        System.out.println("publicStaticSonMethod");
+    }
+
+
+    @Override
+    public void publicFatherMethod() {
+        System.out.println("Son Override publicFatherMethod");
+    }
 }

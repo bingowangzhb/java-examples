@@ -1,4 +1,4 @@
-package com.bgw.reflection;
+package com.bgw.reflection.beans;
 
 /**
  * @author ambow

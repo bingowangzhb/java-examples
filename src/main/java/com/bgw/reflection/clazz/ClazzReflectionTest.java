@@ -4,6 +4,7 @@ import com.bgw.reflection.beans.Drivable;
 import com.bgw.reflection.beans.Father;
 import com.bgw.reflection.beans.Flyable;
 import com.bgw.reflection.beans.Gender;
+import com.bgw.reflection.beans.Son;
 import org.junit.Test;
 
 import java.io.Serializable;
@@ -29,6 +30,11 @@ public class ClazzReflectionTest {
     public void testSuperClass() {
 
         // getSuperClass 获取显式父类
+
+        System.out.println("ArrayList.class.getSuperclass() = " + ArrayList.class.getSuperclass());
+        System.out.println("ArrayList.class.getGenericSuperclass() = " + ArrayList.class.getGenericSuperclass());
+
+
         System.out.println("Flyable.class.getGenericSuperclass() = " + Flyable.class.getGenericSuperclass());
         System.out.println("Flyable.class.getSuperclass() = " + Flyable.class.getSuperclass());
         System.out.println("Flyable.class.getInterfaces() = " + Arrays.toString(Flyable.class.getInterfaces()));

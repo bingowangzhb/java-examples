@@ -1,4 +1,4 @@
-package com.bgw.reflection;
+package com.bgw.reflection.invoke;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.MethodType;

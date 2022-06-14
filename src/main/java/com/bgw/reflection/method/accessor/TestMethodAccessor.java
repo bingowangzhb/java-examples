@@ -1,4 +1,6 @@
-package com.bgw.reflection.methodaccessor;
+package com.bgw.reflection.method.accessor;
+
+import java.lang.reflect.Method;
 
 /**
  * @author ambow
@@ -8,6 +10,11 @@ public class TestMethodAccessor {
 
     public static void main(String[] args) throws Exception {
 
-        Class<?> clz = Class.forName("./Foo");
+        Class<?> clz = Class.forName("com.bgw.reflection.method.accessor.Foo");
+        Object obj = clz.newInstance();
+        Method m = clz.getMethod("foo", String.class);
+        for (int i = 0; i < 16; i++) {
+            m.invoke(obj, Integer.toString(i));
+        }
     }
 }
